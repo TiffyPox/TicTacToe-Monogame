@@ -16,6 +16,11 @@ namespace TicTacToe
         
         public void Play(SoundEffect soundEffect)
         {
+            if (_isMuted)
+            {
+                return;
+            }
+            
             if (_currentSoundEffect != null && soundEffect == _currentSoundEffect)
             {
                 _activeSoundEffect?.Play();
@@ -23,14 +28,8 @@ namespace TicTacToe
             }
             
             _activeSoundEffect?.Pause();
-            
             _activeSoundEffect = soundEffect.CreateInstance();
-
-            if (!_isMuted)
-            {
-                _activeSoundEffect.Play();
-            }
-
+            _activeSoundEffect.Play();
             _currentSoundEffect = soundEffect;
         }
 
