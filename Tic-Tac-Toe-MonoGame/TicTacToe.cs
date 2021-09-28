@@ -18,6 +18,7 @@ namespace TicTacToe
         {
             if (_currentSoundEffect != null && soundEffect == _currentSoundEffect)
             {
+                _activeSoundEffect?.Play();
                 return;
             }
             
@@ -50,7 +51,8 @@ namespace TicTacToe
                 Start();
             }
         }
-        
+
+        public void Restart() => _activeSoundEffect = _currentSoundEffect.CreateInstance();
     }
     public class TicTacToe : Game
     {

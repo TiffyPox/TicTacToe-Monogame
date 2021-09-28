@@ -257,7 +257,8 @@ namespace TicTacToe.Screens
             _count = 0;
             _stopSound = _winSound.CreateInstance();
             _stopSound?.Stop();
-            _soundSystem.Stop();
+            _soundSystem.Restart();
+            _soundSystem.Play(_gameSong);
             _winningCondition = null;
             _isBlocked = false;
             _newGame = true;
