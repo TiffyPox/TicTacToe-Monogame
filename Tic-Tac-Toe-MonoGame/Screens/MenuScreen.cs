@@ -10,18 +10,21 @@ namespace TicTacToe.Screens
     public class MenuScreen : BaseScreen
     {
         private readonly GraphicsDeviceManager _graphicsDeviceManager;
+        
         private readonly SoundSystem _soundSystem;
+        
+        private SoundEffect _menuSong;
         
         private Sprite _titleSprite;
 
         private Vector2 _titlePosition;
+        
         private SpriteFont _font;
+        
         private const string Play = "Play";
         private const string Credits = "Credits";
         private const string Sound = "Sound";
 
-        private SoundEffect _menuSong;
-        
         public MenuScreen(GraphicsDeviceManager graphicsDeviceManager, SoundSystem soundSystem)
         {
             _graphicsDeviceManager = graphicsDeviceManager;

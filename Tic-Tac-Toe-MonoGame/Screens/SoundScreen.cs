@@ -92,7 +92,6 @@ namespace TicTacToe.Screens
 
         protected override void OnUpdate(GameTime gameTime)
         {
-            
         }
     }
 }

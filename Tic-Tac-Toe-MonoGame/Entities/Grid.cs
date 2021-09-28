@@ -12,7 +12,7 @@ namespace TicTacToe.Entities
         private readonly int _cellHeight;
         private Cell _selectedCell;
 
-        private List<(int, int)[]> _winConditions = new List<(int, int)[]>();
+        private readonly List<(int, int)[]> _winConditions = new List<(int, int)[]>();
 
         public Grid(int gridWidth, int gridHeight, int cellWidth, int cellHeight)
         {

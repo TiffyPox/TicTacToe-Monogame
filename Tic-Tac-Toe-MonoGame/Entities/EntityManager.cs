@@ -43,9 +43,7 @@ namespace TicTacToe.Entities
         {
             foreach (var entity in _entities.OrderBy(e => e.DrawOrder))
             {
-
                 entity.Draw(spriteBatch);
-
             }
 
         }
@@ -56,7 +54,6 @@ namespace TicTacToe.Entities
                 throw new ArgumentNullException(nameof(entity), "Null cannot be added as an entity.");
 
             _entitiesToAdd.Add(entity);
-
         }
 
         public void RemoveEntity(IGameEntity entity)
@@ -65,14 +62,11 @@ namespace TicTacToe.Entities
                 throw new ArgumentNullException(nameof(entity), "Null is not a valid entity.");
 
             _entitiesToRemove.Add(entity);
-
         }
 
         public void Clear()
         {
-
             _entitiesToRemove.AddRange(_entities);
-
         }
 
         public IEnumerable<T> GetEntitiesOfType<T>() where T : IGameEntity

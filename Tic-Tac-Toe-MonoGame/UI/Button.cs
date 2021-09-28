@@ -14,6 +14,7 @@ namespace TicTacToe.UI
         private readonly Sprite _sprite;
         private readonly Sprite _heldSprite;
         private readonly SpriteFont _font;
+        
         private readonly Vector2 _position;
 
         public Action OnClick { get; set; }

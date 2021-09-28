@@ -14,12 +14,16 @@ namespace TicTacToe.Screens
     public class GameScreen : BaseScreen
     {
         private int _count;
+        private int _activePlayer;
+        private (int, int)[] _winningCondition;
+        
         private bool _isBlocked;
         private bool _newGame;
         
         private SpriteFont _font;
         private SpriteFont _winnerText;
         private SpriteFont _replayText;
+        
         private const string Return = "Return to Menu";
         private const string YouWon = "Game Over!";
         private const string YouDraw = "You Draw!";
@@ -30,20 +34,20 @@ namespace TicTacToe.Screens
         private SoundEffectInstance _stopSound;
 
         private readonly GraphicsDeviceManager _graphicsDeviceManager;
+        
         private readonly SoundSystem _soundSystem;
 
         private readonly GridRenderer _gridRenderer;
         private readonly Grid _grid;
+        
         private readonly Camera _camera;
+        
         private readonly Texture2D _pixel;
         private readonly Texture2D _fade;
-
-        private int _activePlayer;
-        private readonly PlayerToken[] _players = new PlayerToken[2];
-        
         private Texture2D _spriteSheet;
-        private (int, int)[] _winningCondition;
         
+        private readonly PlayerToken[] _players = new PlayerToken[2];
+
         private KeyboardState _previousKeyboardState;
         
         public GameScreen(GraphicsDeviceManager graphicsDeviceManager, SoundSystem soundSystem)
@@ -244,6 +248,7 @@ namespace TicTacToe.Screens
                 _soundSystem.Stop();
                 _winSound.Play();
             }
+            
             return _count == 9;
         }
 

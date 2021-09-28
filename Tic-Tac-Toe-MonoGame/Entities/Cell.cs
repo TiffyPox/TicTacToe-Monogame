@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TicTacToe.Entities
+﻿namespace TicTacToe.Entities
 {
     public class Cell
     {

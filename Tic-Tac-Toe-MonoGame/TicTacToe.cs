@@ -10,11 +10,18 @@ namespace TicTacToe
     public class SoundSystem
     {
         private bool _isMuted;
+
+        private SoundEffect _currentSoundEffect;
         private SoundEffectInstance _activeSoundEffect;
         
         public void Play(SoundEffect soundEffect)
         {
-            _activeSoundEffect?.Stop();
+            if (_currentSoundEffect != null && soundEffect == _currentSoundEffect)
+            {
+                return;
+            }
+            
+            _activeSoundEffect?.Pause();
             
             _activeSoundEffect = soundEffect.CreateInstance();
 
@@ -22,6 +29,8 @@ namespace TicTacToe
             {
                 _activeSoundEffect.Play();
             }
+
+            _currentSoundEffect = soundEffect;
         }
 
         public void Stop() => _activeSoundEffect?.Pause();
@@ -104,8 +113,6 @@ namespace TicTacToe
 
             _screens.Peek()?.Update(gameTime);
 
-            base.Update(gameTime);
-            
             base.Update(gameTime);
         }
 

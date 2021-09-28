@@ -7,18 +7,17 @@ namespace TicTacToe.Entities
         public Sprite Sprite { get; }
         public int Id { get; }
 
-        private int _points;
-        public int Points => _points;
+        public int Points { get; private set; }
 
-        public PlayerToken(Sprite sprite, int ID)
+        public PlayerToken(Sprite sprite, int id)
         {
             Sprite = sprite;
-            Id = ID;
+            Id = id;
         }
 
         public void AwardPoint(int point)
         {
-            _points += point;
+            Points += point;
         }
         
     }
