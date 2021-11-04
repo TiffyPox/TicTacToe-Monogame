@@ -30,10 +30,5 @@ namespace TicTacToe.Graphics
         {
             spriteBatch.Draw(Texture, position, new Rectangle(X, Y, Width, Height), color, 0, new Vector2(Width / 2.0f, Height / 2.0f), Scale, SpriteEffects.None, 0);
         }
-        
-        public void Draw(SpriteBatch spriteBatch, Vector2 position, Vector2 origin, Color color)
-        {
-            spriteBatch.Draw(Texture, position, new Rectangle(X, Y, Width, Height), color, 0, origin, Scale, SpriteEffects.None, 0);
-        }
     }
 }
